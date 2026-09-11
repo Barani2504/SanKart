@@ -37,11 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A10000262A00000100000001 /* SanKart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SanKart.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A10000272A00000100000001 /* SanKartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SanKartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A10000282A00000100000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A10000022A00000100000001 /* SanKartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanKartApp.swift; sourceTree = "<group>"; };
-		A10000292A00000100000001 /* SanKart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SanKart.xcdatamodel; sourceTree = "<group>"; };
 		A10000062A00000100000001 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		A10000082A00000100000001 /* CDProduct+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDProduct+Extensions.swift"; sourceTree = "<group>"; };
 		A100000A2A00000100000001 /* CDOrder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDOrder+Extensions.swift"; sourceTree = "<group>"; };
@@ -57,6 +53,10 @@
 		A100001E2A00000100000001 /* RemarksAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarksAlertView.swift; sourceTree = "<group>"; };
 		A10000202A00000100000001 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		A10000222A00000100000001 /* SanKartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanKartTests.swift; sourceTree = "<group>"; };
+		A10000262A00000100000001 /* SanKart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SanKart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000272A00000100000001 /* SanKartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SanKartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000282A00000100000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10000292A00000100000001 /* SanKart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SanKart.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +99,23 @@
 				A10000342A00000100000001 /* Views */,
 			);
 			path = SanKart;
+			sourceTree = "<group>";
+		};
+		A100002E2A00000100000001 /* SanKartTests */ = {
+			isa = PBXGroup;
+			children = (
+				A10000222A00000100000001 /* SanKartTests.swift */,
+			);
+			path = SanKartTests;
+			sourceTree = "<group>";
+		};
+		A100002F2A00000100000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A10000262A00000100000001 /* SanKart.app */,
+				A10000272A00000100000001 /* SanKartTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		A10000302A00000100000001 /* CoreData */ = {
@@ -156,23 +173,6 @@
 				A10000202A00000100000001 /* ToastView.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		A100002E2A00000100000001 /* SanKartTests */ = {
-			isa = PBXGroup;
-			children = (
-				A10000222A00000100000001 /* SanKartTests.swift */,
-			);
-			path = SanKartTests;
-			sourceTree = "<group>";
-		};
-		A100002F2A00000100000001 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A10000262A00000100000001 /* SanKart.app */,
-				A10000272A00000100000001 /* SanKartTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +388,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = V9L7B62R22;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = SanKart/Info.plist;
@@ -413,6 +414,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = V9L7B62R22;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = SanKart/Info.plist;
@@ -470,15 +472,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A100003E2A00000100000001 /* Build configuration list for PBXProject "SanKart" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A100003F2A00000100000001 /* Debug */,
-				A10000402A00000100000001 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		A10000362A00000100000001 /* Build configuration list for PBXNativeTarget "SanKart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -497,6 +490,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		A100003E2A00000100000001 /* Build configuration list for PBXProject "SanKart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A100003F2A00000100000001 /* Debug */,
+				A10000402A00000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
@@ -511,7 +513,6 @@
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
-
 	};
 	rootObject = A10000242A00000100000001 /* Project object */;
 }

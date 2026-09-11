@@ -1,6 +1,6 @@
 # SanKart — iOS Product List & Ordering App
 
-A modern, production-ready iOS application built with **SwiftUI**, **Combine**, and **Core Data**, following the Clean **MVVM (Model-View-ViewModel)** and **Repository Pattern**. Designed and verified according to `Product_List_App_Spec.pdf`.
+A modern, production-ready iOS application built with **SwiftUI**, **Combine**, and **Core Data**, following the Clean **MVVM (Model-View-ViewModel)** and **Repository Pattern**. Designed with an offline-first architecture, smooth interactive animations, and robust error handling.
 
 ---
 
@@ -31,34 +31,32 @@ A modern, production-ready iOS application built with **SwiftUI**, **Combine**, 
 SanKart/
 ├── SanKart.xcodeproj/
 │   └── project.pbxproj               # Xcode project definition (iOS 16+, SwiftUI lifecycle)
-├── SanKart/
-│   ├── SanKartApp.swift               # Application entry point (@main)
-│   ├── Info.plist                     # App Transport Security (ATS) HTTP configurations
-│   ├── SanKart.xcdatamodeld/         # Core Data Managed Object Model
-│   │   └── SanKart.xcdatamodel/
-│   │       └── contents               # CDProduct & CDOrder entities
-│   ├── CoreData/
-│   │   ├── PersistenceController.swift# Core Data stack, background contexts, and preview store
-│   │   ├── CDProduct+Extensions.swift # Safe property accessors and fetch requests
-│   │   └── CDOrder+Extensions.swift   # Order history entity extensions
-│   ├── Models/
-│   │   ├── APIModels.swift            # Strongly typed Decodable & Encodable models
-│   │   └── CartSummary.swift          # Live computed cart metrics
-│   ├── Services/
-│   │   ├── NetworkService.swift       # Async/await HTTP client with auto-token management
-│   │   └── ProductRepository.swift    # Core Data & Network synchronization engine
-│   ├── ViewModels/
-│   │   └── ProductListViewModel.swift # Observable state, cart math, and user actions
-│   └── Views/
-│       ├── ProductListView.swift      # Main screen with search, list, pull-to-refresh
-│       ├── ProductRowView.swift       # Product card with name, rate, and stepper
-│       └── Components/
-│           ├── QuantityStepperView.swift # Minus, numeric TextField, and Plus buttons
-│           ├── SummaryCardView.swift     # Docked bottom card with totals and Save CTA
-│           ├── RemarksAlertView.swift    # Modal dialog capturing order remarks
-│           └── ToastView.swift           # Animated HUD feedback notification
-└── SanKartTests/
-    └── SanKartTests.swift             # Unit tests for models, decoding, and cart math
+└── SanKart/
+    ├── SanKartApp.swift               # Application entry point (@main)
+    ├── Info.plist                     # App Transport Security (ATS) HTTP configurations
+    ├── SanKart.xcdatamodeld/         # Core Data Managed Object Model
+    │   └── SanKart.xcdatamodel/
+    │       └── contents               # CDProduct & CDOrder entities
+    ├── CoreData/
+    │   ├── PersistenceController.swift# Core Data stack, background contexts, and preview store
+    │   ├── CDProduct+Extensions.swift # Safe property accessors and fetch requests
+    │   └── CDOrder+Extensions.swift   # Order history entity extensions
+    ├── Models/
+    │   ├── APIModels.swift            # Strongly typed Decodable & Encodable models
+    │   └── CartSummary.swift          # Live computed cart metrics
+    ├── Services/
+    │   ├── NetworkService.swift       # Async/await HTTP client with auto-token management
+    │   └── ProductRepository.swift    # Core Data & Network synchronization engine
+    ├── ViewModels/
+    │   └── ProductListViewModel.swift # Observable state, cart math, and user actions
+    └── Views/
+        ├── ProductListView.swift      # Main screen with search, list, pull-to-refresh
+        ├── ProductRowView.swift       # Product card with name, rate, and stepper
+        └── Components/
+            ├── QuantityStepperView.swift # Minus, numeric TextField, and Plus buttons
+            ├── SummaryCardView.swift     # Docked bottom card with totals and Save CTA
+            ├── RemarksAlertView.swift    # Modal dialog capturing order remarks
+            └── ToastView.swift           # Animated HUD feedback notification
 ```
 
 ---
@@ -77,8 +75,7 @@ SanKart/
 ## 🖥 How to Run on macOS / Xcode
 
 1. Open `SanKart.xcodeproj` in **Xcode 15 or later**.
-2. Select an iOS Simulator target (e.g. **iPhone 15 Pro**, iOS 16+).
-3. Press **Cmd + R** to build and run.
-4. Press **Cmd + U** to run unit tests in `SanKartTests`.
+2. Select an iOS Simulator target (e.g. **iPhone 15 / 16**, iOS 16+).
+3. Press **Cmd + R** to build and run the application.
 
 *Note: Since the API server uses HTTP (`http://sjapi.salesjump.in`), `Info.plist` is already configured with App Transport Security exceptions (`NSAllowsArbitraryLoads`) to ensure network operations run smoothly.*
