@@ -1,27 +1,36 @@
-# SanKart — iOS Product List & Ordering App
+# SanKart — iOS Technical Assessment
 
-A modern, production-ready iOS application built with **SwiftUI**, **Combine**, and **Core Data**, following the Clean **MVVM (Model-View-ViewModel)** and **Repository Pattern**. Designed with an offline-first architecture, smooth interactive animations, and robust error handling.
+**Submission for:** SANeForce (San-e-force)  
+**Role:** iOS Developer Technical Assessment  
+**Platform:** iOS 16.0+ | SwiftUI | Combine | Core Data | Swift Concurrency  
 
 ---
 
-## 🚀 Key Features
+## 📋 Overview
 
-* **Offline-First Core Data Architecture**: The product catalog and user cart state persist locally. The app functions seamlessly with or without an active internet connection.
-* **Master Sync Engine**:
-  * Authenticates via API 1 to retrieve and renew the JWT Bearer Token (`Jwt_Token`).
-  * Concurrently synchronizes the Product Master list (API 2) and State Retailer Rates (API 3).
-  * Reconciles backend rates with products using `Product_Detail_Code == id` and updates Core Data while preserving active user-selected quantities.
-* **Interactive Product List**:
+This repository contains the completed iOS technical assessment for **SANeForce**. The solution implements a production-grade product listing, real-time cart computation, and order dispatch workflow with offline-first local persistence, built using the **MVVM (Model-View-ViewModel)** pattern and **Repository Pattern**.
+
+---
+
+## 🚀 Assessment Requirements & Implementation
+
+* **Offline-First Core Data Persistence**:
+  * Product catalog and cart state persist locally using Core Data.
+  * Preserves user-entered cart quantities during catalog synchronizations.
+* **Master Synchronization Engine**:
+  * **API 1 (Authentication)**: Automatically retrieves and renews the JWT Bearer Token (`Jwt_Token`) with concurrency protection.
+  * **API 2 (Products Master)** & **API 3 (State Rates)**: Fetched concurrently using Swift Concurrency (`async let`), indexed by `Product_Detail_Code`, and upserted into Core Data on a background context.
+* **Interactive Product List & Stepper**:
   * Real-time search filtering by product name or code.
-  * Custom quantity stepper with **Minus (−)** button, **direct numerical TextField** input with number pad, and **Plus (+)** button.
-  * Row-level subtotal computation and rate presentation.
-* **Persistent Bottom Summary Card**:
-  * Real-time computed metrics: **Total Items** (lines with quantity > 0), **Total Quantity**, and **Total Amount** ($\sum \text{rate} \times \text{qty}$).
+  * Custom quantity stepper supporting **Minus (−)**, **Direct Numerical Input** via number pad `TextField`, and **Plus (+)**.
+  * Dynamic subtotal calculations per row.
+* **Live Bottom Summary Card**:
+  * Real-time computation of **Total Items**, **Total Quantity**, and **Total Amount** ($\sum \text{rate} \times \text{qty}$).
   * Interactive Save button with disabled state when cart is empty.
-* **Save Order Flow with Remarks**:
-  * Tapping Save prompts a modal alert with a `TextField` to capture custom order remarks.
-  * Dispatches the formatted order payload to API 4 (`SaveSampleIos`).
-  * On success, clears active cart quantities, logs the order into local `CDOrder` history, and presents a success feedback toast.
+* **Order Submission Flow with Remarks**:
+  * Prompts an alert with a text field to capture custom order remarks.
+  * Dispatches the structured order payload to **API 4** (`SaveSampleIos`).
+  * On success, clears active cart quantities, stores the order locally in `CDOrder`, and displays animated toast feedback.
 
 ---
 
@@ -38,7 +47,7 @@ SanKart/
     │   └── SanKart.xcdatamodel/
     │       └── contents               # CDProduct & CDOrder entities
     ├── CoreData/
-    │   ├── PersistenceController.swift# Core Data stack, background contexts, and preview store
+    │   ├── PersistenceController.swift# Core Data stack, background contexts, and store setup
     │   ├── CDProduct+Extensions.swift # Safe property accessors and fetch requests
     │   └── CDOrder+Extensions.swift   # Order history entity extensions
     ├── Models/
@@ -61,7 +70,7 @@ SanKart/
 
 ---
 
-## 📡 Live API Endpoints Integrated
+## 📡 Assessment APIs Integrated
 
 | API # | Endpoint | Method | Headers / Auth | Description |
 |---|---|---|---|---|
@@ -75,7 +84,8 @@ SanKart/
 ## 🖥 How to Run on macOS / Xcode
 
 1. Open `SanKart.xcodeproj` in **Xcode 15 or later**.
-2. Select an iOS Simulator target (e.g. **iPhone 15 / 16**, iOS 16+).
-3. Press **Cmd + R** to build and run the application.
+2. Select an iOS Simulator target (e.g. **iPhone 15 / 16 Pro**, iOS 16+).
+3. Press **Cmd + R** to build and run the assessment application.
 
-*Note: Since the API server uses HTTP (`http://sjapi.salesjump.in`), `Info.plist` is already configured with App Transport Security exceptions (`NSAllowsArbitraryLoads`) to ensure network operations run smoothly.*
+*Note: Since the backend API server uses HTTP (`http://sjapi.salesjump.in`), `Info.plist` includes App Transport Security exceptions (`NSAllowsArbitraryLoads`) to ensure smooth network communication.*
+
