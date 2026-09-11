@@ -45,5 +45,4 @@ $RECYCLE.BIN/
 ## Test target (excluded from repo, keep local for Xcode)
 SanKartTests/
 
-## Spec/assessment PDF (internal document, not for repo)
-Product_List_App_Spec.pdf
+
