@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDOrder" representedClassName="CDOrder" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isSynced" optional="NO" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="remarks" optional="YES" attributeType="String"/>
+        <attribute name="totalAmount" optional="NO" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="totalItems" optional="NO" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalQty" optional="NO" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="CDProduct" representedClassName="CDProduct" syncable="YES" codeGenerationType="class">
+        <attribute name="code" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="NO" attributeType="String"/>
+        <attribute name="lastUpdated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="NO" attributeType="String"/>
+        <attribute name="productDescription" optional="YES" attributeType="String"/>
+        <attribute name="quantity" optional="NO" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rate" optional="NO" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="unit" optional="YES" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+</model>

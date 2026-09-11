@@ -1,0 +1,49 @@
+# Xcode
+## User settings
+xcuserdata/
+*.xcuserdatad
+*.xcuserstate
+
+## Build generated
+build/
+DerivedData/
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+## Code Injection
+iOSInjectionProject/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Project-specific exclusions
+## Test target (excluded from repo, keep local for Xcode)
+SanKartTests/
+
+## Spec/assessment PDF (internal document, not for repo)
+Product_List_App_Spec.pdf
