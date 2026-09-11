@@ -74,7 +74,7 @@ SanKart/
 
 | API # | Endpoint | Method | Headers / Auth | Description |
 |---|---|---|---|---|
-| **API 1** | `/api/ioslogin` | `POST` | `Content-Type: application/json` | Authenticates default credentials (`sjqa-divya` / `ff@123`) and returns `Jwt_Token`. |
+| **API 1** | `/api/ioslogin` | `POST` | `Content-Type: application/json` | Authenticates user credentials via login payload and returns `Jwt_Token`. |
 | **API 2** | `/api/qc/getmasterSync?Master_Name=Products` | `GET` | `Authorization: Bearer <token>` | Fetches master product items (`id`, `name`, `Code`, `product_unit`, etc.). |
 | **API 3** | `/api/qc/getmasterSync?Master_Name=StateRate` | `GET` | `Authorization: Bearer <token>` | Fetches retailer price matrix matching `Product_Detail_Code` to product `id`. |
 | **API 4** | `/api/qc/SaveSampleIos` | `POST` | `Authorization: Bearer <token>` | Dispatches completed order with product line items, total metrics, and user remarks. |
